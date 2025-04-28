@@ -106,23 +106,40 @@ header{
 }
 
 
-    
+
 
 
 
   
 .hero{
-    background:url(./images/bg-pattern-intro-right-desktop.svg),url(./images/bg-pattern-intro-left-desktop.svg), linear-gradient( var(--primary) 80%, var(--white) 80%);
-    background-position: right top -30%, bottom  left -2%;
-    background-repeat: no-repeat;
+  
+   
     display: grid; 
     grid-template-columns: 1fr 1fr;
-    
+    background: linear-gradient( var(--primary) 80%, var(--white) 80%);
     column-gap: 3rem;
     color: var(--very_light_gray);
     padding: var(--lg_padding);
    
-    
+    position: relative;
+  
+}
+
+.hero::before{
+    content: "";
+    position: absolute;
+    top:0;left: 0;right: 0;bottom: 0;
+    background:url(./images/bg-pattern-intro-right-desktop.svg),url(./images/bg-pattern-intro-left-desktop.svg);
+    background-position: right top -30%, bottom  left -2%;
+    background-repeat: no-repeat;
+    z-index: 4;
+    pointer-events: none;
+
+}
+
+.text,.image{
+    position: relative;
+    z-index: 3;
 }
 
 
@@ -186,8 +203,14 @@ header{
     background-repeat: no-repeat;
     background-position: right;
     background-size: contain;
+   
     margin-top: 5rem;
     padding: 30rem 0rem;
+
+  
+   
+    
+   
     
    
     
@@ -379,6 +402,7 @@ header{
     margin-bottom: 1rem;
     
     
+    
 }
 
 .info_con ul li:first-child{
@@ -410,13 +434,32 @@ header{
 
     .hero{
         
-    background-position: right top -40%, bottom -30% left -5%;
-       
+   /* background-position: right top -40%, bottom -30% left -5%;*/
+   background: linear-gradient( var(--primary) 80%, var(--white) 80%);  
     display: grid; 
     grid-template-columns: 1fr 1fr;
  
     column-gap: 2.5rem;
     padding: var(--desktop_padding);
+    position: relative;
+}
+
+.hero::before{
+    
+    z-index: 4;
+    content: "";
+    position: absolute;
+    top:0;left: 0;right: 0;bottom: 0;
+    background:url(./images/bg-pattern-intro-right-desktop.svg),url(./images/bg-pattern-intro-left-desktop.svg);
+    background-position: right top -40%, bottom -30% left -5%;
+    background-repeat: no-repeat;
+    z-index: 4;
+    pointer-events: none;
+}
+
+.text,.image{
+    position: relative;
+    z-index: 3;
 }
         
 }
@@ -487,12 +530,19 @@ header{
     }
 
     .hero{
-        background:url(./images/bg-pattern-intro-left-mobile.svg),url(./images/bg-pattern-intro-right-mobile.svg), linear-gradient( var(--primary) 70%, var(--very_light_gray) 70%);
-        background-position: left   top  , bottom 15%  right ;
-        background-repeat: no-repeat;
-       
+        background:linear-gradient( var(--primary) 70%, var(--very_light_gray) 70%);
+      
         padding: var(--tablet_padding);
       
+    }
+
+    .hero::before{
+      
+        background:url(./images/bg-pattern-intro-left-mobile.svg),url(./images/bg-pattern-intro-right-mobile.svg);
+        background-position: left   top  , bottom 15%  right ;
+        background-repeat: no-repeat;
+        
+       
     }
 
     .text{
@@ -571,6 +621,7 @@ header{
        background-size:100% 40%;
        background-position: bottom;
        display: none;
+       z-index: 5;
   
        
        
@@ -608,10 +659,11 @@ header{
 
 .nav_links li:last-child a{
  
-    padding: 0.6rem 3rem;
+    padding: 0.6rem 5rem;
     color: var(--very_light_gray);
     background-color: var(--very_dark_violet);
     border: 0.05rem solid var(--very_light_gray);
+    
 }
 
 
@@ -651,8 +703,13 @@ header{
       grid-template-columns: 1fr;
       gap:0rem;
       
+      
 }
 
+.hero::before{
+    content: "";
+    background:transparent;
+}
 .text{
       
 
