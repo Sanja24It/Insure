@@ -353,17 +353,7 @@ header{
     
    
 }
-/*
-.foo_wrapper::after{
-    content: "";
-   padding: 0.1rem 50rem;
-    border: 0.1rem solid var(--dark_grayish_violet);
-    
-    position: absolute;
-    left: 50%;
-    top: 3rem;
-    transform: translate(-50%,50%);
-}*/
+
 
 .icons{
     display: flex;
@@ -434,7 +424,7 @@ header{
 
     .hero{
         
-   /* background-position: right top -40%, bottom -30% left -5%;*/
+ 
    background: linear-gradient( var(--primary) 80%, var(--white) 80%);  
     display: grid; 
     grid-template-columns: 1fr 1fr;
@@ -602,7 +592,7 @@ header{
 @media screen and (min-width:20em ) and (max-width:47.938em){
 
 header{
-       /* position: relative;*/
+      
         padding: 0.5rem 2rem;
         display: flex;
         justify-content: space-between;
